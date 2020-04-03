@@ -3,7 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComicMaker.Blazor.Server", "ComicMaker.Blazor\Server\ComicMaker.Blazor.Server.csproj", "{4C95571B-5B65-4C99-8199-04335B21DC29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComicMaker.Blazor.Client", "ComicMaker.Blazor\Client\ComicMaker.Blazor.Client.csproj", "{0C3827D5-75B6-49E5-BD6D-588C6971A398}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComicMaker.Blazor.Shared", "ComicMaker.Blazor\Shared\ComicMaker.Blazor.Shared.csproj", "{FBC4D5E3-D1E2-4D4A-A7FC-1CCA5BDE33A9}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C95571B-5B65-4C99-8199-04335B21DC29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C95571B-5B65-4C99-8199-04335B21DC29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C95571B-5B65-4C99-8199-04335B21DC29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C95571B-5B65-4C99-8199-04335B21DC29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C3827D5-75B6-49E5-BD6D-588C6971A398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C3827D5-75B6-49E5-BD6D-588C6971A398}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C3827D5-75B6-49E5-BD6D-588C6971A398}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C3827D5-75B6-49E5-BD6D-588C6971A398}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBC4D5E3-D1E2-4D4A-A7FC-1CCA5BDE33A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBC4D5E3-D1E2-4D4A-A7FC-1CCA5BDE33A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBC4D5E3-D1E2-4D4A-A7FC-1CCA5BDE33A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBC4D5E3-D1E2-4D4A-A7FC-1CCA5BDE33A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection

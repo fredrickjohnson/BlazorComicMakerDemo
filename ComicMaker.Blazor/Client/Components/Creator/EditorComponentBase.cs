@@ -15,8 +15,8 @@ namespace ComicMaker.Blazor.Client.Components.Creator
             .AddTab("Dragons","fas fa-photo-video")
             .Build();
             
-        public bool ShowImages { get; set; } = true;
+        public Collapser ShowImages { get; set; } = new Collapser();
 
-        public bool ShowAudio { get; set; } = false;
+        public Collapser ShowAudio { get; set; } = new Collapser();
     }
 }

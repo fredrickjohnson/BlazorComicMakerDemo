@@ -1,0 +1,66 @@
+﻿@inherits EditorComponentBase
+<div class="d-flex">
+    <div class="flex-shrink-1">
+        <div class="d-flex flex-column bg-secondary">
+            <Button>
+                <i class="fas fa-photo-video text-white"></i><br />
+                <span class="text-white">Assets</span>
+            </Button>
+            <Button>
+                <i class="fa fa-images text-white"></i><br />
+                <span class="text-white">Images</span>
+            </Button>
+            <Button>
+                <i class="fa fa-images text-white"></i><br />
+                <span class="text-white">Images</span>
+            </Button>
+        </div>
+    </div>
+    <div class="flex-fill">
+        <div class="row">
+            <div class="col-sm-12 col-md-3">
+                <Accordion>
+                    <Card>
+                        <CardHeader Class="py-0">
+                            <div class="d-flex">
+                                <Heading Size="HeadingSize.Is5">
+                                    <Button Clicked="@(()=>ShowImages = !ShowImages)">Audio</Button>
+                                </Heading>
+                                <CollapseButtonComponent Class="ml-auto" Clicked="@(()=>ShowImages = !ShowImages)" Toggle="@ShowImages" />
+                            </div>
+                        </CardHeader>
+                        <Collapse IsOpen="@ShowImages">
+                            <CardBody>
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            </CardBody>
+                        </Collapse>
+                    </Card>
+                    <Card>
+                        <CardHeader Class="py-0">
+                            <div class="d-flex">
+                                <Heading Size="HeadingSize.Is5">
+                                    <Button Clicked="@(()=>ShowAudio = !ShowAudio)">Audio</Button>
+                                </Heading>
+                                <CollapseButtonComponent Class="ml-auto" Clicked="@(()=>ShowAudio = !ShowAudio)" Toggle="@ShowAudio" />
+                            </div>
+                        </CardHeader>
+                        <Collapse IsOpen="@ShowAudio">
+                            <CardBody>
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            </CardBody>
+                        </Collapse>
+                    </Card>
+                </Accordion>
+            </div>
+            <div class="col-sm-12 col-md-9 vh-100">
+                <div class="d-flex vh-100 align-items-center flex-column">
+                    <div class="">Top</div>
+                    <div class="mb-auto flex-fill bg-danger ">
+                        <h2>Test</h2>
+                    </div>
+                    <div class="">Bottom</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

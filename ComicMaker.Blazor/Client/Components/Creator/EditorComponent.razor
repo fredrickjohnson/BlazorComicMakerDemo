@@ -1,8 +1,9 @@
 ﻿@inherits EditorComponentBase
-<div class="d-flex">
+
+<div class="d-flex h-100">
     <div class="flex-shrink-1">
         <div class="d-flex flex-column bg-secondary">
-           <TabBarComponent Model="Tabs"/>
+            <TabBarComponent Model="Tabs" />
         </div>
     </div>
     <div class="flex-fill">
@@ -41,8 +42,8 @@
                     </Card>
                 </Accordion>
             </div>
-            <div class="col-sm-12 col-md-9 vh-100">
-                <div class="d-flex vh-100 align-items-center flex-column">
+            <div class="col-sm-12 vh-100 col-md-9">
+                <div class="d-flex h-100 align-items-center flex-column">
                     <div class="">Top</div>
                     <div class="mb-auto flex-fill bg-danger ">
                         <h2>Test</h2>
@@ -50,6 +51,22 @@
                     <div class="">Bottom</div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="flex-shrink-1">
+        <div class="d-flex flex-column">
+            <Button Class="bg-light" Clicked="@Preview">
+                <i class="fas fa-search"></i><br />
+                Undo
+            </Button>
+            <Button Class="bg-light" Clicked="@Undo">
+                <i class="fas fa-undo"></i><br />
+                Undo
+            </Button>
+            <Button Class="bg-light" Clicked="@Redo">
+                <i class="fas fa-redo"></i><br />
+                Redo
+            </Button>
         </div>
     </div>
 </div>

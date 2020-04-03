@@ -1,0 +1,11 @@
+﻿@inherits TabBarComponentBase
+@if (Model != null)
+{
+@foreach (var item in Model.Items)
+{
+    <Button Clicked="@(() => Model.OnSelected(item))" Class="@item.ButtonClass">
+        <i class="@item.IconClass"></i><br/>
+        <span class="@item.TextClass">@item.Name</span>
+    </Button>
+}
+}

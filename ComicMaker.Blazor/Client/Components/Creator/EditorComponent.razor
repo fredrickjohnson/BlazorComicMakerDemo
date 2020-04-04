@@ -2,7 +2,10 @@
 
 <div class="d-flex h-100">
     <div class="flex-shrink-1">
-        <div class="d-flex flex-column bg-secondary">
+        <div class="d-flex flex-column bg-secondary h-100">
+            <Button>
+                <i class="fa fa-bars fa-2x text-white"></i><br/>
+            </Button>
             <TabBarComponent Model="Tabs" />
         </div>
     </div>
@@ -45,8 +48,10 @@
             <div class="col-sm-12 vh-100 col-md-9">
                 <div class="d-flex h-100 align-items-center flex-column">
                     <div class="">Top</div>
-                    <div class="mb-auto flex-fill bg-danger ">
-                        <h2>Test</h2>
+                    <div class="mb-auto flex-fill">
+                        <div class="bg-danger" style="height: 450px; width: 800px; z-index:-300;">
+                            <div class="bg-primary" @onclick="@UTest" style="width: 50px; height: 100px; position: relative; top: @Test.Ys; left: @Test.Xs;"></div>
+                        </div>
                     </div>
                     <div class="">Bottom</div>
                 </div>

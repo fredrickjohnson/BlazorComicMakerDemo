@@ -9,7 +9,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComicMaker.Blazor.Client", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComicMaker.Blazor.Shared", "ComicMaker.Blazor\Shared\ComicMaker.Blazor.Shared.csproj", "{FBC4D5E3-D1E2-4D4A-A7FC-1CCA5BDE33A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComicMaker", "ComicMaker\ComicMaker.csproj", "{9410D33C-B4F5-4133-9FEA-46A82C3DB7A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComicMaker", "ComicMaker\ComicMaker.csproj", "{9410D33C-B4F5-4133-9FEA-46A82C3DB7A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComicMaker.Tests", "ComicMaker.Tests\ComicMaker.Tests.csproj", "{B09C5A10-BAA0-4617-B38E-4D4E76EA0F24}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tasks", "Tasks", "{24AB388A-82B4-4CF6-B870-15E5C0B7A784}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5D10BCBB-90B9-48F3-98FC-55C8D95DADBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComicMaker.Tasks", "ComicMaker.Tasks\ComicMaker.Tasks.csproj", "{FD7BC46B-A0AF-4566-B02E-3C521A185C10}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +41,21 @@ Global
 		{9410D33C-B4F5-4133-9FEA-46A82C3DB7A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9410D33C-B4F5-4133-9FEA-46A82C3DB7A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9410D33C-B4F5-4133-9FEA-46A82C3DB7A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B09C5A10-BAA0-4617-B38E-4D4E76EA0F24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B09C5A10-BAA0-4617-B38E-4D4E76EA0F24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B09C5A10-BAA0-4617-B38E-4D4E76EA0F24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B09C5A10-BAA0-4617-B38E-4D4E76EA0F24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD7BC46B-A0AF-4566-B02E-3C521A185C10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD7BC46B-A0AF-4566-B02E-3C521A185C10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD7BC46B-A0AF-4566-B02E-3C521A185C10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD7BC46B-A0AF-4566-B02E-3C521A185C10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B09C5A10-BAA0-4617-B38E-4D4E76EA0F24} = {5D10BCBB-90B9-48F3-98FC-55C8D95DADBD}
+		{FD7BC46B-A0AF-4566-B02E-3C521A185C10} = {24AB388A-82B4-4CF6-B870-15E5C0B7A784}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {64DDD08A-FEC5-4533-8A3E-038F17D68103}

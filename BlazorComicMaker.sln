@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComicMaker.Blazor.Client", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComicMaker.Blazor.Shared", "ComicMaker.Blazor\Shared\ComicMaker.Blazor.Shared.csproj", "{FBC4D5E3-D1E2-4D4A-A7FC-1CCA5BDE33A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComicMaker", "ComicMaker\ComicMaker.csproj", "{9410D33C-B4F5-4133-9FEA-46A82C3DB7A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{FBC4D5E3-D1E2-4D4A-A7FC-1CCA5BDE33A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBC4D5E3-D1E2-4D4A-A7FC-1CCA5BDE33A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBC4D5E3-D1E2-4D4A-A7FC-1CCA5BDE33A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9410D33C-B4F5-4133-9FEA-46A82C3DB7A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9410D33C-B4F5-4133-9FEA-46A82C3DB7A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9410D33C-B4F5-4133-9FEA-46A82C3DB7A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9410D33C-B4F5-4133-9FEA-46A82C3DB7A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

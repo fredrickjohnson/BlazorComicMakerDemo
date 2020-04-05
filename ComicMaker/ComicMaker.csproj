@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Accounts\Data\" />
+    <Folder Include="Accounts\Models\" />
+    <Folder Include="Common\Models\" />
+    <Folder Include="Common\Commands\" />
+    <Folder Include="Common\Queries\" />
+    <Folder Include="Projects\Data\Interfaces\" />
+    <Folder Include="Projects\Data\Implementations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.Cosmos.Table" Version="1.0.6" />
+  </ItemGroup>
+
+</Project>

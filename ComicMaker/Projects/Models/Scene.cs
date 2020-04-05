@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using ComicMaker.Common.Services.Implementations;
 
 namespace ComicMaker.Projects.Models
 {
     public class Scene
     {
-        public Guid Id { get; set; } = Guid.Empty;
+        public string Id { get; set; } = IdFactory.Create();
 
         public Guid ProjectId { get; set; } = Guid.Empty;
 

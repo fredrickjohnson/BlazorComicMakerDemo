@@ -6,12 +6,11 @@
 
   <ItemGroup>
     <Folder Include="Accounts\Data\" />
-    <Folder Include="Accounts\Models\" />
+    <Folder Include="Accounts\Commands\" />
+    <Folder Include="Accounts\Queries\" />
     <Folder Include="Common\Models\" />
     <Folder Include="Common\Commands\" />
     <Folder Include="Common\Queries\" />
-    <Folder Include="Projects\Data\Interfaces\" />
-    <Folder Include="Projects\Data\Implementations\" />
   </ItemGroup>
 
   <ItemGroup>

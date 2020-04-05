@@ -5,7 +5,7 @@ namespace ComicMaker.Projects.Models
 {
     public class Character
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public string Id { get; set; } = Guid.NewGuid().ToString();
 
         public Guid ProjectId { get; set; } = Guid.Empty;
 

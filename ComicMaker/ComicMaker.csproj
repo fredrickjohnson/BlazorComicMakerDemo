@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -8,13 +8,12 @@
     <Folder Include="Accounts\Data\" />
     <Folder Include="Accounts\Commands\" />
     <Folder Include="Accounts\Queries\" />
-    <Folder Include="Common\Models\" />
-    <Folder Include="Common\Commands\" />
-    <Folder Include="Common\Queries\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="8.6.2" />
     <PackageReference Include="Microsoft.Azure.Cosmos.Table" Version="1.0.6" />
+    <PackageReference Include="Optional" Version="4.0.0" />
   </ItemGroup>
 
 </Project>

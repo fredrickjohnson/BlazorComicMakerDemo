@@ -9,12 +9,4 @@ namespace ComicMaker.Common.Services.Implementations
     {
         public DateTime Now => DateTime.Now;
     }
-
-    public static class IdFactory
-    {
-        public static string Create()
-        {
-            return Guid.NewGuid().ToString();
-        }
-    }
 }

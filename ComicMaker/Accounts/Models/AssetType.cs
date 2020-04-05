@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ComicMaker.Accounts.Models
+﻿namespace ComicMaker.Accounts.Models
 {
     public static class AssetType
     {

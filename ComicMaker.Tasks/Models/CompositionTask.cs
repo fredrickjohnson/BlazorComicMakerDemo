@@ -6,6 +6,8 @@ namespace ComicMaker.Tasks.Models
     {
         private readonly IList<ITask> _tasks = new List<ITask>();
 
+        public override string Name => "Composition";
+
         public CompositionTask Add(ITask task)
         {
             _tasks.Add(task);

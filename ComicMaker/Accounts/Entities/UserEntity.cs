@@ -1,4 +1,5 @@
-﻿using Microsoft.Azure.Cosmos.Table;
+﻿using ComicMaker.Common.Models;
+using Microsoft.Azure.Cosmos.Table;
 
 namespace ComicMaker.Accounts.Entities
 {
@@ -9,6 +10,6 @@ namespace ComicMaker.Accounts.Entities
         public string LastName { get; set; }
         public string EmailAddress { get; set; }
         public string Auth0Id { get; set; }
-        public string AccountsAsString { get; set; }
+        public string AccountsAsString { get; set; } = List.Empty();
     }
 }

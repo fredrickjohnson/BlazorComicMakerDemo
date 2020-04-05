@@ -1,11 +1,12 @@
 ﻿using System;
+using ComicMaker.Common.Services.Implementations;
 using Microsoft.Azure.Cosmos.Table;
 
 namespace ComicMaker.Projects.Entities
 {
     public class ProjectEntity : TableEntity
     {
-        public Guid AccountId { get; set; } = Guid.Empty;
+        public string AccountId { get; set; } = IdFactory.Create();
         public string Name { get; set; }
         public string Description { get; set; }
         public int Width { get; set; } = 800;

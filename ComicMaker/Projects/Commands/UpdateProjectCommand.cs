@@ -1,6 +1,9 @@
-﻿namespace ComicMaker.Projects.Commands
+﻿using ComicMaker.Common.Commands;
+using ComicMaker.Common.Queries;
+
+namespace ComicMaker.Projects.Commands
 {
-    public class UpdateProjectCommand
+    public class UpdateProjectCommand : CommandQueryBase, IIdCommandQuery
     {
         public string Id { get; set; }
 

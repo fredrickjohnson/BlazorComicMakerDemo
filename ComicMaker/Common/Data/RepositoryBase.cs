@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using ComicMaker.Common.Commands;
 using ComicMaker.Common.Services.Interfaces;
 using Microsoft.Azure.Cosmos.Table;
+using Optional;
 
 namespace ComicMaker.Common.Data
 {
@@ -25,7 +25,7 @@ namespace ComicMaker.Common.Data
             var query = new TableQuery<T>();
 
             var entities = Table.ExecuteQuery(query);
-
+            
             return entities;
         }
 
@@ -34,6 +34,13 @@ namespace ComicMaker.Common.Data
             var operation = TableOperation.Retrieve<T>(id, partitionKey);
             var result = Table.Execute(operation);
             return result.Result as T;
+        }
+
+        public Option<T> GetById(IIdCommandQuery query)
+        {
+            var operation = TableOperation.Retrieve<T>(query.Id, "");
+            var result = Table.Execute(operation);
+            return result.Result == null ? Option.None<T>() : Option.Some<T>(result.Result as T);
         }
 
         public void Insert(T model)

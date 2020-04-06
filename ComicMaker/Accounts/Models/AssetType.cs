@@ -1,4 +1,6 @@
-﻿namespace ComicMaker.Accounts.Models
+﻿using System;
+
+namespace ComicMaker.Accounts.Models
 {
     public static class AssetType
     {

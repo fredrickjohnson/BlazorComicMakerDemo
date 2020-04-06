@@ -4,8 +4,8 @@ using ComicMaker.Projects.Models;
 
 namespace ComicMaker.Projects.Data.Interfaces
 {
-    public interface IProjectQueryRepository
+    public interface ISceneQueryRepository
     {
-        IEnumerable<ProjectSummary> GetAllForAccount(GetListQuery query);
+        IEnumerable<Scene> GetAllForProject(GetListByParentIdQuery query);
     }
 }

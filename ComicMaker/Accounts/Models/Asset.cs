@@ -1,13 +1,8 @@
-﻿using ComicMaker.Accounts.Models;
-using ComicMaker.Common.Entities;
-using ComicMaker.Common.Services.Implementations;
-using Microsoft.Azure.Cosmos.Table;
-
-namespace ComicMaker.Accounts.Entities
+﻿namespace ComicMaker.Accounts.Models
 {
-    public class AssetEntity : TableEntity, IAccountEntity
+    public class Asset
     {
-        public string AccountId { get; set; } = IdFactory.Empty();
+        public string Id { get; set; }
         public string FullPath { get; set; } = string.Empty;
         public string Type { get; set; } = AssetType.Image;
         public int FileSize { get; set; }

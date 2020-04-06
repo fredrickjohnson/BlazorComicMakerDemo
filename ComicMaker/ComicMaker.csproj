@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Accounts\Data\" />
-    <Folder Include="Accounts\Commands\" />
+    <Folder Include="Accounts\Services\" />
     <Folder Include="Accounts\Queries\" />
   </ItemGroup>
 

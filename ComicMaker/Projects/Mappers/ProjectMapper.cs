@@ -1,4 +1,5 @@
-﻿using ComicMaker.Common.Services.Implementations;
+﻿using System.Runtime.InteropServices.WindowsRuntime;
+using ComicMaker.Common.Services.Implementations;
 using ComicMaker.Projects.Commands;
 using ComicMaker.Projects.Entities;
 using ComicMaker.Projects.Models;
@@ -20,7 +21,8 @@ namespace ComicMaker.Projects.Mappers
             return new ProjectSummary
             {
                 Id = source.RowKey,
-                Name = source.Name
+                Name = source.Name,
+                Description = source.Description
             };
         }
 

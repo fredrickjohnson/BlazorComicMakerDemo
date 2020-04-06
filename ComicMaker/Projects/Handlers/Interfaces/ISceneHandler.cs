@@ -8,11 +8,11 @@ using Optional;
 
 namespace ComicMaker.Projects.Handlers.Interfaces
 {
-    public interface IProjectHandler
+    public interface ISceneHandler
     {
-        Option<IEnumerable<ProjectSummary>, ErrorResult> GetAllForAccount(GetListQuery query);
-        Option<SuccessResult, ErrorResult> Create(CreateProjectCommand command);
-        Option<SuccessResult, ErrorResult> Update(UpdateProjectCommand command);
+        Option<IEnumerable<Scene>, ErrorResult> GetAllFor(GetListByParentIdQuery query);
+        Option<SuccessResult, ErrorResult> Create(CreateSceneCommand command);
+        Option<SuccessResult, ErrorResult> Update(UpdateSceneCommand command);
         Option<SuccessResult, ErrorResult> Delete(DeleteByIdCommand command);
     }
 }

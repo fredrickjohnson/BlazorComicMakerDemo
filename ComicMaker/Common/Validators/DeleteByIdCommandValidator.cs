@@ -1,5 +1,4 @@
-﻿using System.Text;
-using ComicMaker.Common.Commands;
+﻿using ComicMaker.Common.Commands;
 using FluentValidation;
 
 namespace ComicMaker.Common.Validators

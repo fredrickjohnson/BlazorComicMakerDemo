@@ -7,5 +7,6 @@
         public const string Asset = "Asset";
         public const string Project = "Project";
         public const string Scene = "Scene";
+        public const string Character = "Character";
     }
 }

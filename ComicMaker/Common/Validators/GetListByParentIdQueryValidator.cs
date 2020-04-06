@@ -3,11 +3,12 @@ using FluentValidation;
 
 namespace ComicMaker.Common.Validators
 {
-    public class GetPagedQueryValidator : AbstractValidator<GetPagedQuery>
+    public class GetListByParentIdQueryValidator : AbstractValidator<GetListByParentIdQuery>
     {
-        public GetPagedQueryValidator()
+        public GetListByParentIdQueryValidator()
         {
             RuleFor(x => x.Credentials.UserId).NotEmpty();
+            RuleFor(x => x.ParentId).NotEmpty();
         }
     }
 }

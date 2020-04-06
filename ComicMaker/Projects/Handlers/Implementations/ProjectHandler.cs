@@ -1,11 +1,13 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using ComicMaker.Common.Commands;
 using ComicMaker.Common.Models;
+using ComicMaker.Common.Queries;
 using ComicMaker.Common.Validators;
 using ComicMaker.Projects.Commands;
 using ComicMaker.Projects.Data.Interfaces;
 using ComicMaker.Projects.Handlers.Interfaces;
 using ComicMaker.Projects.Mappers;
+using ComicMaker.Projects.Models;
 using ComicMaker.Projects.Services.Interfaces;
 using ComicMaker.Projects.Validators;
 using Optional;
@@ -34,6 +36,11 @@ namespace ComicMaker.Projects.Handlers.Implementations
             _getListQueryValidator = new GetListQueryValidator();
             _getByIdQueryValidator = new GetByIdQueryValidator();
             _deleteByIdCommandValidator = new DeleteByIdCommandValidator();
+        }
+
+        public Option<IEnumerable<ProjectSummary>, ErrorResult> GetAllForAccount(GetListQuery query)
+        {
+            return _getListQueryValidator.Validate(query).OnSuccess(errorBuilder => _projectQueryRepository.GetAllForAccount(query));
         }
 
         public Option<SuccessResult, ErrorResult> Create(CreateProjectCommand command)

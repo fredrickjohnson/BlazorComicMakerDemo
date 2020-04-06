@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using ComicMaker.Common.Models;
+﻿using ComicMaker.Common.Models;
 using Microsoft.Azure.Cosmos.Table;
 
 namespace ComicMaker.Accounts.Entities

@@ -1,5 +1,4 @@
 ﻿using ComicMaker.Common.Commands;
-using ComicMaker.Common.Queries;
 using ComicMaker.Projects.Entities;
 using Optional;
 

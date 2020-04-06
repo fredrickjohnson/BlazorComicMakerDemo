@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using ComicMaker.Common.Data;
+using ComicMaker.Common.Queries;
 using ComicMaker.Common.Services.Interfaces;
 using ComicMaker.Projects.Data.Interfaces;
 using ComicMaker.Projects.Entities;
@@ -19,10 +18,10 @@ namespace ComicMaker.Projects.Data.Implementations
 
         }
 
-        public IEnumerable<ProjectSummary> GetAllForAccount(string accountId)
+        public IEnumerable<ProjectSummary> GetAllForAccount(GetListQuery query)
         {
-            var query = new TableQuery<ProjectEntity>();
-            var results = query.Where(TableQuery.GenerateFilterCondition(nameof(ProjectEntity.AccountId),QueryComparisons.Equal, accountId));
+            var tableQuery = new TableQuery<ProjectEntity>();
+            var results = tableQuery.Where(TableQuery.GenerateFilterCondition(nameof(ProjectEntity.AccountId),QueryComparisons.Equal, query.Credentials.AccountId));
             return results.Select(ProjectMapper.Map);
         }
     }

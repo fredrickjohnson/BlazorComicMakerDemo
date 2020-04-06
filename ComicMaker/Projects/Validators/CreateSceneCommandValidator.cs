@@ -3,9 +3,9 @@ using FluentValidation;
 
 namespace ComicMaker.Projects.Validators
 {
-    public class CreateProjectCommandValidator : AbstractValidator<CreateProjectCommand>
+    public class CreateSceneCommandValidator : AbstractValidator<CreateSceneCommand>
     {
-        public CreateProjectCommandValidator()
+        public CreateSceneCommandValidator()
         {
             //RuleFor(x => x.AccountId).NotEmpty();
         }

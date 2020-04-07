@@ -9,12 +9,14 @@ namespace ComicMaker.Common.Data
     public abstract class RepositoryBase
     {
         protected CloudTable Table;
+        protected string TableName;
 
         protected RepositoryBase(IConnectionString connectionString, string tableName)
         {
             var storageAccount = CloudStorageAccount.Parse(connectionString.Get());
             var tableClient = storageAccount.CreateCloudTableClient();
             Table = tableClient.GetTableReference(tableName);
+            TableName = tableName;
         }
     }
 
@@ -38,7 +40,7 @@ namespace ComicMaker.Common.Data
 
         public Option<T> GetById(IIdCommandQuery query)
         {
-            var operation = TableOperation.Retrieve<T>(query.Id, "");
+            var operation = TableOperation.Retrieve<T>(query.Id,TableName);
             var result = Table.Execute(operation);
             return result.Result == null ? Option.None<T>() : Option.Some<T>(result.Result as T);
         }

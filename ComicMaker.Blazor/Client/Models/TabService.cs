@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
-using System.Threading.Tasks;
-using Blazorise;
+﻿using System.Collections.Generic;
 
-namespace ComicMaker.Blazor.Client.Services
+namespace ComicMaker.Blazor.Client.Models
 {
     public class TabService
     {

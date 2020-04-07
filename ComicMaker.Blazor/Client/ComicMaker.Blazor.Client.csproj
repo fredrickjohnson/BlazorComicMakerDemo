@@ -24,5 +24,8 @@
     <Content Remove="wwwroot\service-worker.js" />
     <Content Update="wwwroot\service-worker.published.js" Link="wwwroot\service-worker.js" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\Interfaces\" />
+  </ItemGroup>
 
 </Project>

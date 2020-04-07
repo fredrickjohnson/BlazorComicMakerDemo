@@ -1,6 +1,7 @@
 ﻿using System.Linq;
+using ComicMaker.Blazor.Client.Models;
 
-namespace ComicMaker.Blazor.Client.Services
+namespace ComicMaker.Blazor.Client.Factories
 {
     public class TabServiceFactory
     {

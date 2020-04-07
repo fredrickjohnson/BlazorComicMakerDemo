@@ -1,4 +1,4 @@
-﻿namespace ComicMaker.Blazor.Client.Services
+﻿namespace ComicMaker.Blazor.Client.Models
 {
     public class TabItem
     {

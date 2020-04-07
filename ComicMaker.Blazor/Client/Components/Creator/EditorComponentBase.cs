@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mime;
 using System.Threading.Tasks;
+using ComicMaker.Blazor.Client.Factories;
 using ComicMaker.Blazor.Client.Models;
 using ComicMaker.Blazor.Client.Services;
 using Microsoft.AspNetCore.Components;

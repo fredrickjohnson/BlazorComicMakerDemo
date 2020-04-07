@@ -38,36 +38,43 @@ namespace ComicMaker.Projects.Handlers.Implementations
 
         public Option<IEnumerable<Scene>, ErrorResult> GetAllFor(GetListByParentIdQuery query)
         {
-            return _getListByParentIdQueryValidator.Validate(query)
+            return _getListByParentIdQueryValidator
+                .Validate(query)
                 .OnSuccess(errorBuilder => _sceneQueryRepository.GetAllForProject(query));
         }
 
         public Option<SuccessResult, ErrorResult> Create(CreateSceneCommand command)
         {
-            return _createSceneCommandValidator.Validate(command).OnSuccess(errorBuilder =>
-            {
-                _sceneRepository.Insert(_mapper.Map(command));
-            });
+            return _createSceneCommandValidator
+                .Validate(command)
+                .OnSuccess(errorBuilder =>
+                {
+                    _sceneRepository.Insert(_mapper.Map(command));
+                });
         }
 
         public Option<SuccessResult, ErrorResult> Update(UpdateSceneCommand command)
         {
-            return _updateSceneCommandValidator.Validate(command).OnSuccess(errorBuilder =>
-            {
-                var option = _sceneRepository.GetById(command);
-                option.MatchSome(x => _sceneRepository.Update(_mapper.Map(command,x)));
-                option.MatchNone(errorBuilder.AddRecordNotFound);
-            });
+            return _updateSceneCommandValidator
+                .Validate(command)
+                .OnSuccess(errorBuilder =>
+                {
+                    var option = _sceneRepository.GetById(command);
+                    option.MatchSome(x => _sceneRepository.Update(_mapper.Map(command, x)));
+                    option.MatchNone(errorBuilder.AddRecordNotFound);
+                });
         }
 
         public Option<SuccessResult, ErrorResult> Delete(DeleteByIdCommand command)
         {
-            return _deleteByIdCommandValidator.Validate(command).OnSuccess(errorBuilder =>
-            {
-                var option = _sceneRepository.GetById(command);
-                option.MatchSome(x => _sceneRepository.Delete(x));
-                option.MatchNone(errorBuilder.AddRecordNotFound);
-            });
+            return _deleteByIdCommandValidator
+                .Validate(command)
+                .OnSuccess(errorBuilder =>
+                {
+                    var option = _sceneRepository.GetById(command);
+                    option.MatchSome(x => _sceneRepository.Delete(x));
+                    option.MatchNone(errorBuilder.AddRecordNotFound);
+                });
         }
     }
 }

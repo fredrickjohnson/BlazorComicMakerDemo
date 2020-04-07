@@ -2,7 +2,7 @@
 
 namespace ComicMaker.Common.Queries
 {
-    public class GetListByParentIdQuery : CommandQueryBase
+    public class GetListByParentIdQuery : CommandQueryBase, IParentIdCommandQuery
     {
         public string ParentId { get; set; }
     }

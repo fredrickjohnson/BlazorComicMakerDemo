@@ -30,26 +30,32 @@ namespace ComicMaker.Accounts.Handlers.Implementations
 
         public Option<SuccessResult, ErrorResult> Create(CreateAccountCommand command)
         {
-            return _createAccountCommandValidator.Validate(command).OnSuccess(errorBuilder =>
-            {
-                _accountRepository.Insert(_mapper.Map(command));
-            });
+            return _createAccountCommandValidator
+                .Validate(command)
+                .OnSuccess(errorBuilder =>
+                {
+                    _accountRepository.Insert(_mapper.Map(command));
+                });
         }
 
         public Option<SuccessResult, ErrorResult> AddUser(AddUserToAccountCommand command)
         {
-            return _addUserToAccountCommandValidator.Validate(command).OnSuccess(errorBuilder =>
-            {
-               
-            });
+            return _addUserToAccountCommandValidator
+                .Validate(command)
+                .OnSuccess(errorBuilder =>
+                {
+                   
+                });
         }
 
         public Option<SuccessResult, ErrorResult> RemoveUser(RemoveUserFromAccountCommand command)
         {
-            return _removeUserFromAccountCommandValidator.Validate(command).OnSuccess(errorBuilder =>
-            {
+            return _removeUserFromAccountCommandValidator
+                .Validate(command)
+                .OnSuccess(errorBuilder =>
+                {
 
-            });
+                });
         }
     }
 }

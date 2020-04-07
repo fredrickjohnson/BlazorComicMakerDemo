@@ -1,3 +1,4 @@
+using ComicMaker.Functions.Api.Services.Implementations;
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 
 [assembly: FunctionsStartup(typeof(ComicMaker.Functions.Api.Startup))]

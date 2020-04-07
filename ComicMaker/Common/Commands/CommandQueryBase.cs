@@ -6,10 +6,4 @@ namespace ComicMaker.Common.Commands
     {
         public Credentials Credentials { get; set; } = new Credentials();
     }
-
-    public interface IIdCommandQuery
-    {
-        string Id { get; }
-        Credentials Credentials { get; }
-    }
 }

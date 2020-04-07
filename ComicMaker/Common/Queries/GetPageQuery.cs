@@ -2,7 +2,7 @@
 
 namespace ComicMaker.Common.Queries
 {
-    public class GetPageQuery : CommandQueryBase
+    public class GetPageQuery : CommandQueryBase, IGetPageQuery
     {
         public int ItemsPerPage { get; set; } = 10;
 

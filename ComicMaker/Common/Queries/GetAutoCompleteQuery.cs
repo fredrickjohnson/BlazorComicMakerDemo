@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using ComicMaker.Common.Commands;
+﻿using ComicMaker.Common.Commands;
 
 namespace ComicMaker.Common.Queries
 {
-    public class GetAutoCompleteQuery : CommandQueryBase
+    public class GetAutoCompleteQuery : CommandQueryBase, IGetAutoCompleteQuery
     {
         public string Query { get; set; }
     }

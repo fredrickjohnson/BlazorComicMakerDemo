@@ -37,38 +37,43 @@ namespace ComicMaker.Accounts.Handlers.Implementations
         
         public Option<IEnumerable<Character>, ErrorResult> GetAllForAccount(GetListQuery query)
         {
-            return _getListQueryValidator.Validate(query).OnSuccess(errorBuilder =>
-                {
-                    return _characterQueryRepository.GetAllForAccount(query);
-                });
+            return _getListQueryValidator
+                .Validate(query)
+                .OnSuccess(errorBuilder => _characterQueryRepository.GetAllForAccount(query));
         }
 
         public Option<SuccessResult, ErrorResult> Create(CreateCharacterCommand command)
         {
-            return _createCharacterCommandValidator.Validate(command).OnSuccess(errorBuilder =>
-            {
-                _characterRepository.Insert(_mapper.Map(command));
-            });
+            return _createCharacterCommandValidator
+                .Validate(command)
+                .OnSuccess(errorBuilder =>
+                {
+                    _characterRepository.Insert(_mapper.Map(command));
+                });
         }
 
         public Option<SuccessResult, ErrorResult> Update(UpdateCharacterCommand command)
         {
-            return _updateCharacterCommandValidator.Validate(command).OnSuccess(errorBuilder =>
-            {
-                var option = _characterRepository.GetById(command);
-                option.MatchSome(x => _characterRepository.Update(_mapper.Map(command,x)));
-                option.MatchNone(errorBuilder.AddRecordNotFound);
-            });
+            return _updateCharacterCommandValidator
+                .Validate(command)
+                .OnSuccess(errorBuilder =>
+                {
+                    var option = _characterRepository.GetById(command);
+                    option.MatchSome(x => _characterRepository.Update(_mapper.Map(command,x)));
+                    option.MatchNone(errorBuilder.AddRecordNotFound);
+                });
         }
 
         public Option<SuccessResult, ErrorResult> Delete(DeleteByIdCommand command)
         {
-            return _deleteByIdCommandValidator.Validate(command).OnSuccess(errorBuilder =>
-            {
-                var option = _characterRepository.GetById(command);
-                option.MatchSome(x => _characterRepository.Delete(x));
-                option.MatchNone(errorBuilder.AddRecordNotFound);
-            });
+            return _deleteByIdCommandValidator
+                .Validate(command)
+                .OnSuccess(errorBuilder =>
+                {
+                    var option = _characterRepository.GetById(command);
+                    option.MatchSome(x => _characterRepository.Delete(x));
+                    option.MatchNone(errorBuilder.AddRecordNotFound);
+                });
         }
     }
 }

@@ -1,9 +1,16 @@
+using System.Collections;
 using System.IO;
+using ComicMaker.Common.Commands;
 using ComicMaker.Common.Services.Interfaces;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
+using Microsoft.WindowsAzure.Storage.Blob;
 using Newtonsoft.Json;
 
 namespace ComicMaker.Functions.Api.Services.Implementations
 {
+   
+
     public class DevelopmentConnectionString : IConnectionString
     {
         private readonly Model _settings;

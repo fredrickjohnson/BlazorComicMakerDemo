@@ -21,7 +21,7 @@ namespace ComicMaker.Projects.Data.Implementations
         public IEnumerable<ProjectSummary> GetAllForAccount(GetListQuery query)
         {
             var tableQuery = new TableQuery<ProjectEntity>();
-            var results = tableQuery.Where(TableQuery.GenerateFilterCondition(nameof(ProjectEntity.AccountId),QueryComparisons.Equal, query.Credentials.AccountId));
+            var results = Table.ExecuteQuery(tableQuery.Where(TableQuery.GenerateFilterCondition(nameof(ProjectEntity.AccountId),QueryComparisons.Equal, query.Credentials.AccountId)));
             return results.Select(ProjectMapper.Map);
         }
     }

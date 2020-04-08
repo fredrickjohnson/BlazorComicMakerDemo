@@ -20,11 +20,11 @@ namespace ComicMaker.Projects.Data.Implementations
         public IEnumerable<Scene> GetAllForProject(GetListByParentIdQuery query)
         {
             var tableQuery = new TableQuery<SceneEntity>();
-            var results = tableQuery.Where(
+            var results = Table.ExecuteQuery(tableQuery.Where(
                 TableQuery.CombineFilters(
                     TableQuery.GenerateFilterCondition(nameof(SceneEntity.AccountId), QueryComparisons.Equal, query.Credentials.AccountId),
                     TableOperators.And,
-                    TableQuery.GenerateFilterCondition(nameof(SceneEntity.ProjectId), QueryComparisons.Equal, query.ParentId)));
+                    TableQuery.GenerateFilterCondition(nameof(SceneEntity.ProjectId), QueryComparisons.Equal, query.ParentId))));
             return results.Select(SceneMapper.Map);
         }
     }

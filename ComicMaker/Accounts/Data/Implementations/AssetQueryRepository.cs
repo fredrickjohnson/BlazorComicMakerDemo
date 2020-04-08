@@ -20,7 +20,7 @@ namespace ComicMaker.Accounts.Data.Implementations
         public IEnumerable<Asset> GetAllForAccount(GetListQuery query)
         {
             var tableQuery = new TableQuery<AssetEntity>();
-            var results = tableQuery.Where(TableQuery.GenerateFilterCondition(nameof(AssetEntity.AccountId), QueryComparisons.Equal, query.Credentials.AccountId));
+            var results = Table.ExecuteQuery(tableQuery.Where(TableQuery.GenerateFilterCondition(nameof(AssetEntity.AccountId), QueryComparisons.Equal, query.Credentials.AccountId)));
             return results.Select(AssetMapper.Map);
         }
     }

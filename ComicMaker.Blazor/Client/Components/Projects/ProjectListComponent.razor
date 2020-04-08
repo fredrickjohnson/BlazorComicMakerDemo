@@ -1,0 +1,71 @@
+﻿@inherits ProjectListComponentBase
+<div class="d-flex mb-1">
+    <Heading Size="HeadingSize.Is3" Class="mr-auto">Your Projects</Heading>
+</div>
+
+<FeedbackComponent @ref="Feedback" />
+
+@if (IsLoading)
+{
+    <LoadingComponent Text="Loading Projects..." />
+}
+else
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-3 p-1">
+                <div class="card p-1 h-100">
+                    <img class="card-img-top" src="https://via.placeholder.com/800x800.png?" alt="" />
+                    <div class="card-footer">
+                        <Button Color="Color.Success" IsBlock="true" Clicked="@ShowCreate">
+                            <i class="fas fa-plus"></i> Create New Project
+                        </Button>
+                    </div>
+                </div>
+            </div>
+            @foreach (var item in Items)
+            {
+                <div class="col-sm-12 col-md-3 p-1">
+                    <div class="card p-1 h-100">
+                        <img class="card-img-top" src="https://via.placeholder.com/800x450.png?" alt="" />
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Name</h5>
+                            <p class="card-text text-truncate">
+                                @item.Description
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <Row>
+                                <Column Class="px-1">
+                                    <Button IsBlock="true" Color="Color.Primary" Clicked="@(() => LoadByItem(item))">
+                                        <i class="fa fa-edit"></i>
+                                    </Button>
+                                </Column>
+                                <Column Class="px-1">
+                                    <Button IsBlock="true" Color="Color.Primary" Clicked="@(() => DeleteById(item.Id))">
+                                        <i class="fa fa-trash"></i>
+                                    </Button>
+                                </Column>
+                            </Row>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
+
+<Modal @ref="CreateModal">
+    <ModalBackdrop />
+    <ModalContent IsCentered="true">
+        <ModalHeader>
+            <ModalTitle>Create Project</ModalTitle>
+            <CloseButton Clicked="@HideCreate" />
+        </ModalHeader>
+        <ModalBody>
+            <ProjectCreateComponent OnCreated="@(x => LoadList())" />
+        </ModalBody>
+    </ModalContent>
+</Modal>
+
+<DeleteConfirmationComponent @ref="DeleteConfirmation" />

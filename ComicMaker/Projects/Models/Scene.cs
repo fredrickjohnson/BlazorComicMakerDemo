@@ -8,8 +8,6 @@ namespace ComicMaker.Projects.Models
     {
         public string Id { get; set; } = IdFactory.Create();
 
-        public string ProjectId { get; set; } = IdFactory.Empty();
-
         public string Name { get; set; } = string.Empty;
 
         public string TopText { get; set; } = string.Empty;

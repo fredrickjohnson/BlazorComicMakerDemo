@@ -1,5 +1,4 @@
 ﻿using ComicMaker.Common.Commands;
-using ComicMaker.Common.Queries;
 
 namespace ComicMaker.Projects.Commands
 {

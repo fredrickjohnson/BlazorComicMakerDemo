@@ -1,0 +1,21 @@
+﻿@inherits PagerComponentBase
+    <Pagination>
+        <PaginationItem IsDisabled="true" IsVisible="false">
+            <PaginationLink IsDisabled="true" Clicked="@Prev">
+                <span aria-hidden="true">«</span>
+            </PaginationLink>
+        </PaginationItem>
+        @foreach (var item in Pages)
+        {
+            <PaginationItem IsActive="@(item == SelectedPage)">
+                <PaginationLink  Clicked="@(() => Test(item))">
+                    @item.Text
+                </PaginationLink>
+            </PaginationItem>
+        }
+        <PaginationItem>
+            <PaginationLink Clicked="@Next">
+                <span aria-hidden="true">»</span>
+            </PaginationLink>
+        </PaginationItem>
+    </Pagination>

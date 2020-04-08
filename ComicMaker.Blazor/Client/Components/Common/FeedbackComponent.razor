@@ -1,0 +1,7 @@
+﻿@inherits FeedbackComponentBase
+<Alert Color="Color.Info" IsShow="@Show">
+    @foreach (var item in Messages)
+    {
+        <Paragraph Class="mb-1">@item.Text</Paragraph>
+    }
+</Alert>

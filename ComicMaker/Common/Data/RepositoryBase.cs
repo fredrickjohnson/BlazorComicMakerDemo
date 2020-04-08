@@ -16,6 +16,7 @@ namespace ComicMaker.Common.Data
             var storageAccount = CloudStorageAccount.Parse(connectionString.Get());
             var tableClient = storageAccount.CreateCloudTableClient();
             Table = tableClient.GetTableReference(tableName);
+            Table.CreateIfNotExists();
             TableName = tableName;
         }
     }
@@ -33,14 +34,14 @@ namespace ComicMaker.Common.Data
 
         public T GetById(string id, string partitionKey)
         {
-            var operation = TableOperation.Retrieve<T>(id, partitionKey);
+            var operation = TableOperation.Retrieve<T>(partitionKey,id);
             var result = Table.Execute(operation);
             return result.Result as T;
         }
 
         public Option<T> GetById(IIdCommandQuery query)
         {
-            var operation = TableOperation.Retrieve<T>(query.Id,TableName);
+            var operation = TableOperation.Retrieve<T>(TableName,query.Id);
             var result = Table.Execute(operation);
             return result.Result == null ? Option.None<T>() : Option.Some<T>(result.Result as T);
         }

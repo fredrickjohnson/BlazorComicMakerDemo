@@ -1,0 +1,17 @@
+﻿@inherits DeleteConfirmationComponentBase
+<Modal @ref="Modal">
+    <ModalBackdrop />
+    <ModalContent IsCentered="true">
+        <ModalHeader>
+            <ModalTitle>Deletion Confirmation</ModalTitle>
+            <CloseButton Clicked="@HideModal" />
+        </ModalHeader>
+    <ModalBody>
+        <text>@Text</text>
+        <div class="d-flex">
+            <Button Color="Color.Secondary" class="ml-auto mr-1" Clicked="@No">Cancel</Button>
+            <Button Color="Color.Danger"  Clicked="@Yes">Yes</Button>
+        </div>
+    </ModalBody>
+    </ModalContent>
+</Modal>

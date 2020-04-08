@@ -40,7 +40,9 @@ namespace ComicMaker.Projects.Handlers.Implementations
 
         public Option<IEnumerable<ProjectSummary>, ErrorResult> GetAllForAccount(GetListQuery query)
         {
-            return _getListQueryValidator.Validate(query).OnSuccess(errorBuilder => _projectQueryRepository.GetAllForAccount(query));
+            return _getListQueryValidator
+                .Validate(query)
+                .OnSuccess(errorBuilder => _projectQueryRepository.GetAllForAccount(query));
         }
 
         public Option<SuccessResult, ErrorResult> Create(CreateProjectCommand command)

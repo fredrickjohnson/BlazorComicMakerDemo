@@ -6,7 +6,6 @@ namespace ComicMaker.Projects.Commands
     public class CreateSceneCommand : CommandQueryBase
     {
         public string ProjectId { get; set; } = IdFactory.Empty();
-        public string AccountId { get; set; } = IdFactory.Empty();
         public string Name { get; set; }
     }
 }

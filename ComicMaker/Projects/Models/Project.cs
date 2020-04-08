@@ -1,5 +1,4 @@
-﻿using System;
-using ComicMaker.Common.Services.Implementations;
+﻿using ComicMaker.Common.Services.Implementations;
 
 namespace ComicMaker.Projects.Models
 {

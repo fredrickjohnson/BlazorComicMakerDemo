@@ -1,4 +1,5 @@
 ﻿using System.Runtime.InteropServices.WindowsRuntime;
+using ComicMaker.Common.Data;
 using ComicMaker.Common.Services.Implementations;
 using ComicMaker.Projects.Commands;
 using ComicMaker.Projects.Entities;
@@ -31,7 +32,8 @@ namespace ComicMaker.Projects.Mappers
             var destination = new ProjectEntity
             {
                 RowKey = IdFactory.Create(),
-                PartitionKey = _partitionKeyGenerator.CreateProjectKey(),
+                PartitionKey = Table.Project,
+                AccountId = source.Credentials.AccountId,
                 Name = source.Name,
                 Description = source.Description
             };

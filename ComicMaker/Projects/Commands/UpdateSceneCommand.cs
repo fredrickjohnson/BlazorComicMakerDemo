@@ -8,7 +8,6 @@ namespace ComicMaker.Projects.Commands
     public class UpdateSceneCommand : CommandQueryBase, IIdCommandQuery
     {
         public string Id { get; set; } = IdFactory.Empty();
-
         public string Name { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
 

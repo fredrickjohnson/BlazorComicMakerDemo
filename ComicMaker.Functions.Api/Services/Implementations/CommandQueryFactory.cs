@@ -18,7 +18,7 @@ namespace ComicMaker.Functions.Api.Services.Implementations
     {
         private readonly ILogger _logger;
         private readonly HttpRequest _request;
-        private IList<RequestActionBase> _actions = new List<RequestActionBase>();
+        private readonly IList<RequestActionBase> _actions = new List<RequestActionBase>();
 
 
         public CommandQueryFactory(HttpRequest request, ILogger logger)
@@ -49,9 +49,15 @@ namespace ComicMaker.Functions.Api.Services.Implementations
             return this;
         }
 
-        private Credentials CreateCredentials()
+        private Credentials GetCredentials()
         {
-            return new Credentials();
+            return new Credentials
+            {
+                AccountId = "a888df1c-b02d-42a4-8a8b-ef9364a35afd",
+                UserId = "2bd70447-9cd0-4905-9b53-80c355bf4e81",
+                UserName = "jburner@mailinator.com",
+                Claims = new List<string> {"Admin"}
+            };
         }
 
         private async  Task<Option<T>> CreateModel()
@@ -59,7 +65,8 @@ namespace ComicMaker.Functions.Api.Services.Implementations
             var model = new T();
             try
             {
-                if (_request.Method == "post" || _request.Method == "put")
+                var method = _request.Method.ToUpper();
+                if (method == "POST" || method == "PUT")
                 {
                     var requestBody = await new StreamReader(_request.Body).ReadToEndAsync();
                     model = JsonConvert.DeserializeObject<T>(requestBody);
@@ -70,7 +77,7 @@ namespace ComicMaker.Functions.Api.Services.Implementations
                 _logger.Log(LogLevel.Error, ex, "");
                 return Option.None<T>();
             }
-            model.Credentials = CreateCredentials();
+            model.Credentials = GetCredentials();
             AutoRegister(model);
             foreach (var action in _actions)
             {

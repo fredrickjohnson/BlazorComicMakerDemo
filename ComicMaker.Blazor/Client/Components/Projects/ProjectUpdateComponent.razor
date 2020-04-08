@@ -1,0 +1,31 @@
+﻿@inherits ProjectUpdateComponentBase
+<FeedbackComponent @ref="@Feedback"/>
+<Row>
+    <Column>
+        <Validations @ref="Validations" Mode="ValidationMode.Manual" Model="@this">
+            <Field>
+                <FieldLabel>Name</FieldLabel>
+                <Validation>
+                    <TextEdit Placeholder="" @bind-Text="@Name">
+                                  <Feedback>
+                                      <ValidationError />
+                                  </Feedback>
+                              </TextEdit>
+                              </Validation>
+                              </Field>
+                              <Field>
+                                  <FieldLabel>Description</FieldLabel>
+                                  <Validation>
+                                      <TextEdit Placeholder="" @bind-Text="@Description">
+                                                    <Feedback>
+                                                        <ValidationError />
+                                                    </Feedback>
+                                                </TextEdit>
+                                                </Validation>
+                                                </Field>
+                                                </Validations>
+                                                </Column>
+                                                </Row>
+                                                <div class="d-flex">
+                                                    <Button Color="Color.Primary" Class="ml-auto" Clicked="@Save">Save</Button>
+                                                </div>

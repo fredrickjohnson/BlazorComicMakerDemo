@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mime;
-using System.Threading.Tasks;
+using ComicMaker.Blazor.Client.Components.Common;
 using ComicMaker.Blazor.Client.Factories;
 using ComicMaker.Blazor.Client.Models;
-using ComicMaker.Blazor.Client.Services;
 using Microsoft.AspNetCore.Components;
 
-namespace ComicMaker.Blazor.Client.Components.Creator
+namespace ComicMaker.Blazor.Client.Components.Projects
 {
-    public class EditorComponentBase : ComponentBase
+    public class ProjectDetailComponentBase : EditorComponentBase
     {
         public TabService Tabs = new TabServiceFactory()
             .AddTab("Scenes", "fas fa-home")
